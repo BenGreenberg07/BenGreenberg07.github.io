@@ -35,14 +35,6 @@
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
 
-  // News expander
-  var table = document.getElementById("newsTable");
-  var btn = document.getElementById("newsBtn");
-  btn.addEventListener("click", function () {
-    var open = table.classList.toggle("open");
-    btn.textContent = open ? "Show less" : "Show older news";
-  });
-
   // Lightbox
   var box = document.getElementById("lightbox");
   var boxImg = box.querySelector("img");
