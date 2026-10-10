@@ -117,7 +117,7 @@
           <h3>Aerial Robotics Researcher</h3>
           <p class="org"><a href="https://swarmslab.com/">Aerial Swarms Lab</a>, Lehigh University</p>
           <ul>
-            <li>Engineered an autonomous blimp for rehabilitation applications, working from airframe to flight software.</li>
+            <li>Engineered an autonomous blimp for rehabilitation applications, working from airframe to flight software (<a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a>).</li>
             <li>Designed and 3D-printed a custom frame integrating an ESP32 and IMU at a <strong>29 g</strong> total system weight, iterating over 10+ builds.</li>
             <li>Wrote a pure-pursuit and PD controller in C that cut post-push position error <strong>67%</strong> (1.27 to 0.42 m) and returned the blimp to within 1.5 m of target in <strong>95%</strong> of motion-capture trials, with a 13.2 s median recovery.</li>
             <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, a paper on human-drone interaction and intent recognition.</li>
@@ -155,7 +155,7 @@
   <!-- ================= PROJECTS ================= -->
   <section id="projects" class="reveal">
     <div class="sec-head"><h2>Projects</h2><span class="count">05</span></div>
-    <p class="sec-sub">Selected projects, most of them built outside a classroom. Each one I designed, built, and tested myself or with a small team.</p>
+    <p class="sec-sub">Selected projects from class, research, and on my own.</p>
     <div class="entries">
 
       <!-- 2. Truss -->
@@ -168,9 +168,8 @@
         <div>
           <h3>Cantilever Truss: Design, Build, and Load Test</h3>
           <p class="meta">Swarthmore College, ENGR 006 · April 2026</p>
-          <p>Designed, machined, and load-tested an aluminum cantilever truss scored on weight and deflection.
-            It carried the full 1,000 lb point load; my post-test analysis traced the extra deflection to joint
-            misalignment from assembly, not the member sizing.</p>
+          <p>Designed, machined, and load-tested a 6.45 lb aluminum cantilever truss that carried a 1,000 lb
+            point load.</p>
         </div>
       </div>
 
@@ -188,10 +187,8 @@
           <h3>Nine-Key Macropad, Custom PCB</h3>
           <p class="meta">Independent project · May 2026</p>
           <p class="entry-links"><a href="https://github.com/BenGreenberg07/custom-micropad">code &amp; PCB</a></p>
-          <p>Designed the schematic and PCB in KiCad, hand-soldered the board, and flashed custom QMK firmware for
-            full key remapping, with a 3D-printed case. Two keys failed on first power-up; I traced them to a cold
-            joint by probing with a multimeter rather than reflowing at random. Designed, assembled, debugged, and
-            programmed in one week.</p>
+          <p>Designed the schematic and PCB in KiCad for a 9-key macropad, hand-soldered it, and flashed custom
+            QMK firmware.</p>
         </div>
       </div>
 
@@ -204,11 +201,9 @@
           <h3>Custom End Attachment for a Haptic Research Device</h3>
           <p class="meta"><a href="https://sites.google.com/swarthmore.edu/biomechanics">Towles Biomechanics Lab</a>, Swarthmore College · 2025 – present</p>
           <p class="entry-links"><a href="https://github.com/BenGreenberg07/geomagic-phantom">code</a></p>
-          <p>The stock PHANToM end effector forced a whole-hand grip, making the finger-specific strength
-            measurements the study needed impossible. I designed and printed an attachment for one- or two-finger
-            interaction, sized around the hand geometry and grip strength of post-stroke patients, and wrote C++
-            force-feedback and position-tracking software on the OpenHaptics SDK. It is now central to the lab's
-            patient-testing protocol.</p>
+          <p>The stock PHANToM end effector forces a whole-hand grip. I designed and printed an attachment for
+            one- or two-finger interaction, and wrote C++ force-feedback and position-tracking software on the
+            OpenHaptics SDK.</p>
         </div>
       </div>
 
@@ -239,8 +234,7 @@
           <h3>F1TENTH Autonomous Racing Car</h3>
           <p class="meta">Swarthmore Robotics Club, President · 2026 – present</p>
           <p>Leading a team building a 1/10-scale autonomous race car, integrating LiDAR-based SLAM with the ROS
-            navigation stack and dividing perception, planning, and control across members. We took the club from
-            no autonomy platform to a SLAM and navigation stack running on hardware.</p>
+            navigation stack.</p>
         </div>
       </div>
 
@@ -291,11 +285,13 @@
       </div>
       <div class="job">
         <div class="when">Clubs</div>
-        <div class="clubs">
-          <div class="club"><h3>Club Squash</h3><span>Captain</span></div>
-          <div class="club"><h3>Ceramics Club</h3><span>Founder</span></div>
-          <div class="club"><h3>Chabad</h3><span>Executive Board</span></div>
-          <div class="club"><h3>180 Degrees Consulting</h3><span>Member</span></div>
+        <div>
+          <ul class="clubs">
+            <li><b>Club Squash</b>, Captain</li>
+            <li><b>Ceramics Club</b>, Founder</li>
+            <li><b>Chabad</b>, Executive Board</li>
+            <li><b>180 Degrees Consulting</b>, Member</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -304,20 +300,16 @@
   <!-- ================= MORE CODE ================= -->
   <section id="code" class="reveal">
     <div class="sec-head"><h2>More on GitHub</h2></div>
-    <p class="sec-sub">Smaller software projects and tools.</p>
-    <div class="repos">
-      <a class="repo" href="https://github.com/BenGreenberg07/chit">
-        <div class="rn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8z"/></svg>chit</div>
-        <div class="rd">Split a restaurant bill from a photo of the receipt. Runs in the phone browser, no sign-in.</div>
-      </a>
-      <a class="repo" href="https://github.com/BenGreenberg07/esp-fly-blimp">
-        <div class="rn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8z"/></svg>esp-fly-blimp</div>
-        <div class="rd">Blimp firmware, browser control panels, and the ESP-NOW radio bridge.</div>
-      </a>
-      <a class="repo" href="https://github.com/BenGreenberg07/freesolv-ml">
-        <div class="rn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8z"/></svg>freesolv-ml</div>
-        <div class="rd">ML models predicting molecular hydration free energies from SMILES (Stevens research project).</div>
-      </a>
+    
+    <div class="timeline">
+      <div class="job">
+        <div class="when"><a href="https://github.com/BenGreenberg07/chit">chit</a></div>
+        <div><p class="org" style="margin:0">Split a restaurant bill from a photo of the receipt. Runs in the phone browser, no sign-in.</p></div>
+      </div>
+      <div class="job">
+        <div class="when"><a href="https://github.com/BenGreenberg07/freesolv-ml">freesolv-ml</a></div>
+        <div><p class="org" style="margin:0">ML models predicting molecular hydration free energies from SMILES (Stevens research project).</p></div>
+      </div>
     </div>
   </section>
 
