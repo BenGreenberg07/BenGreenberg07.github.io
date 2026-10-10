@@ -222,3 +222,8 @@ footer { margin-top: 44px; border-top: 1px solid var(--rule); padding: 20px 0 48
   .project { grid-template-columns: 1fr; gap: 12px; }
   .project .pic { width: 100%; aspect-ratio: 16 / 10; }
 }
+
+/* ---------- version switch ---------- */
+.version { font: 400 12px var(--mono); color: var(--ink-3); display: flex; gap: 8px; }
+.version a { color: var(--ink-3); text-decoration: none; }
+.version a.on { color: var(--ink); text-decoration: underline; text-decoration-color: var(--link-rule); text-underline-offset: 3px; }

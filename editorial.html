@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benjamin Greenberg</title>
+  <meta name="description" content="Benjamin Greenberg, engineering and economics student at Swarthmore College. Hardware, embedded systems, and robotics.">
+  <meta name="author" content="Benjamin Greenberg">
+  <meta property="og:title" content="Benjamin Greenberg">
+  <meta property="og:description" content="Hardware, embedded systems, and robotics. Swarthmore College.">
+  <meta property="og:image" content="https://bengreenberg07.github.io/images/ben_blimp.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23f7f5f0'/><text x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%238c1c2c' text-anchor='middle'>B</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="editorial.css">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Benjamin Greenberg</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#news">News</a>
+      <a href="cv/Benjamin_Greenberg_CV.pdf">CV</a>
+    </nav>
+    <span class="version" title="Two candidate designs">version <a href="./">A</a><a class="on" href="editorial.html">B</a></span>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch color theme">dark</button>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="intro">
+    <div>
+      <h1>Benjamin Greenberg</h1>
+      <p>
+        I'm a sophomore at <a href="https://www.swarthmore.edu/">Swarthmore College</a>, working toward a
+        B.S. in Engineering and a B.A. in Economics. Most of what I build is small hardware: 3D-printed
+        frames, PCBs, and the C and C++ that run on them.
+      </p>
+      <p>
+        This past summer I built a 29&nbsp;g autonomous blimp in
+        <a href="https://engineering.lehigh.edu/faculty/david-saldana">David Saldaña</a>'s
+        <a href="https://swarmslab.com/">Aerial Swarms Lab</a> at Lehigh. During the term I work on a
+        haptic robot for stroke rehabilitation research at Swarthmore, study vaccination tipping points with
+        Hsuan-Wei Lee at Lehigh, and run the robotics club, where we're building an F1TENTH race car.
+      </p>
+      <p class="seeking">Looking for Summer 2027 internships in hardware, embedded systems, or robotics.</p>
+      <p class="contact">
+        <a href="mailto:bgreenb2@swarthmore.edu">Email</a><span class="sep">/</span><a href="cv/Benjamin_Greenberg_CV.pdf">CV</a><span class="sep">/</span><a href="https://github.com/BenGreenberg07">GitHub</a><span class="sep">/</span><a href="https://www.linkedin.com/in/benjamin-greenberg-/">LinkedIn</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=JMRG6v8AAAAJ&amp;hl=en">Scholar</a>
+      </p>
+    </div>
+    <figure class="photo">
+      <img src="images/ben.jpg" alt="Benjamin Greenberg" width="500" height="600">
+      <figcaption>Lehigh, summer 2026</figcaption>
+    </figure>
+  </div>
+
+  <!-- ============ Publications ============ -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="pic" data-caption="The blimp holding position in the motion-capture arena at Lehigh.">
+        <img src="images/blimp.jpg" alt="Red helium blimp with a 3D-printed gondola" loading="lazy">
+      </div>
+      <div>
+        <h3><a href="https://arxiv.org/abs/2609.27154">HINT-Blimp: Human INTent Inference from Multimodal Cues for Robotic Blimps</a></h3>
+        <p class="authors">Subhadeep Koley, <b>Benjamin Greenberg</b>, Yifei Simon Shao, Juan Aceros, Nadia Figueroa, David Saldaña</p>
+        <p class="status">Under review, 2026. Spotlight talk at the IROS 2026 NoC workshop.</p>
+        <p class="links"><a href="https://arxiv.org/abs/2609.27154">arXiv</a> / <a href="https://youtu.be/b_QbHGdgBf4">video</a> / <a href="https://nocworkshop.github.io/2026-IROS/resources/15/IROS_workshop_poster.pdf">poster</a></p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pic" data-caption="The same parameters support both a high-coverage state and a collapsed one.">
+        <img class="fig" src="images/bistability.jpg" alt="Bistability figure from the vaccination model" loading="lazy">
+      </div>
+      <div>
+        <h3>Tipping Points in Vaccination Systems: Bistability, Irreversibility and Early-Warning Signals</h3>
+        <p class="authors"><b>Benjamin Greenberg</b>, Hsuan-Wei Lee</p>
+        <p class="status">In revision for resubmission, 2026.</p>
+        <p class="links"><a href="https://github.com/BenGreenberg07/vaccination-bistability">code</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Experience ============ -->
+  <section id="experience">
+    <h2>Research</h2>
+
+    <div class="plate">
+      <div class="pic" data-caption="With the blimp in the flight arena at Lehigh.">
+        <img src="images/ben_blimp.jpg" alt="Ben next to the blimp in the flight arena" loading="lazy">
+      </div>
+      <div class="pic" data-caption="The gondola: ESP32 flight board, IMU and motors on a printed frame.">
+        <img src="images/gondola.jpg" alt="Close-up of the blimp gondola" loading="lazy">
+      </div>
+      <div class="pic" data-caption="Printed finger attachment on the PHANToM Premium stylus.">
+        <img src="images/haptic.jpg" alt="Hand using the custom haptic attachment" loading="lazy">
+      </div>
+    </div>
+    <p class="plate-cap">Left to right: the blimp in Lehigh's flight arena, its 29 g gondola, the haptic finger attachment.</p>
+
+    <div class="row">
+      <div class="date">May – Aug 2026</div>
+      <div>
+        <h3>Aerial Robotics Researcher</h3>
+        <p class="where"><a href="https://swarmslab.com/">Aerial Swarms Lab</a>, Lehigh University</p>
+        <ul>
+          <li>Built an autonomous blimp for rehabilitation applications, from the airframe through the flight software.</li>
+          <li>Designed and printed a frame around an ESP32 and IMU at 29 g total, over more than ten builds.</li>
+          <li>Wrote a pure-pursuit and PD controller in C. Post-push position error fell from 1.27 m to 0.42 m, and the blimp got back within 1.5 m of target in 95% of motion-capture trials (median recovery 13.2 s).</li>
+          <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="date">Oct 2025 – now</div>
+      <div>
+        <h3>Haptic Robotics Research Assistant</h3>
+        <p class="where">Neuromuscular hand control lab, Swarthmore College</p>
+        <ul>
+          <li>Setting up a PHANToM Premium haptic device for post-stroke rehabilitation research.</li>
+          <li>Designed and printed an attachment so patients interact with individual fingers instead of gripping with the whole hand.</li>
+          <li>Wrote C++ force-feedback and position-tracking code on the OpenHaptics SDK to cover what it doesn't do natively.</li>
+          <li>Designing a testing protocol to see whether post-stroke patients have a mix of sensorimotor deficits or one dominant type.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="date">Jun 2025 – now</div>
+      <div>
+        <h3>Computational Network Dynamics Researcher</h3>
+        <p class="where">Lehigh University, with Hsuan-Wei Lee</p>
+        <ul>
+          <li>Built and ran an agent-based epidemic model (4,000 agents, 50 replicates) on my own.</li>
+          <li>Found that small dips in vaccination coverage can tip herd immunity into a collapse that is hard to undo.</li>
+          <li>First author on the manuscript, which we are revising for resubmission.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Projects ============ -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="lede">Mostly built outside class, alone or with a small team. Hover a picture for a second view; click to enlarge.</p>
+
+    <div class="project">
+      <div class="pic" data-caption="The gondola in flight. Second view: a push-and-return trial, shoved 2.23 m off target.">
+        <img src="images/blimp_hand.jpg" alt="Blimp gondola leaving a hand" loading="lazy">
+        <img class="swap fig" src="images/blimp_return.jpg" alt="Push-and-return flight data" loading="lazy">
+      </div>
+      <div>
+        <h3>Autonomous blimp</h3>
+        <p class="where">Aerial Swarms Lab, Lehigh · 2026</p>
+        <p class="links"><a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a> / <a href="https://arxiv.org/abs/2609.27154">paper</a></p>
+        <p>Lift sets the budget for everything: each gram of frame is a gram less battery or sensing. I drew the
+          airframe around an ESP32 flight board and IMU, wrote the control firmware in C, and flew it over an
+          ESP-NOW radio link under OptiTrack motion capture. Push it a couple of meters off its target and it
+          flies itself back.</p>
+        <ul class="figures">
+          <li><b>29 g</b> all-up</li>
+          <li><b>10+</b> frame builds</li>
+          <li><b>1.27 → 0.42 m</b> post-push error</li>
+          <li><b>95%</b> back within 1.5 m</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="pic" data-caption="As built: 14 aluminum members, 9 bolted joints. Second view: computed member forces (lb) at the 1,000 lb design load.">
+        <img src="images/truss.jpg" alt="Aluminum cantilever truss on a workbench" loading="lazy">
+        <img class="swap fig" src="images/truss_forces.jpg" alt="Member force diagram" loading="lazy">
+      </div>
+      <div>
+        <h3>Cantilever truss</h3>
+        <p class="where">ENGR 006, Swarthmore · April 2026</p>
+        <p>Scored on weight and deflection under a 1,000 lb point load, with a 30 in minimum span and 18 in height
+          limit. I sized the 14 members: square tube in compression, flat bar in tension. We passed on the lightest
+          simulated geometry because its angles were tighter than we could assemble accurately.</p>
+        <p>It held the load but deflected 0.390 in, against 0.121 in predicted. My write-up traced the gap to
+          assembly: offset versus inline joints had been chosen by eye, and the small out-of-plane errors added up.</p>
+        <ul class="figures">
+          <li><b>6.45 lb</b> truss</li>
+          <li><b>1,000 lb</b> load held</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="pic" data-caption="Engineering stress against strain for both specimens, from the raw Instron data in MATLAB.">
+        <img class="fig" src="images/tensile.jpg" alt="Stress-strain curves for aluminum and steel" loading="lazy">
+      </div>
+      <div>
+        <h3>Tensile testing and material choice</h3>
+        <p class="where">ENGR 006, Swarthmore · May 2026</p>
+        <p>Pulled Aluminum 6061 and C1018 steel specimens on an Instron to choose a material for the department's
+          truss program, and wrote the MATLAB that turned raw force and displacement into stress-strain curves.
+          Steel was about 2.5 times stronger. I still recommended aluminum: per unit volume it was cheaper, easier to
+          machine, and light enough for students to handle safely.</p>
+        <ul class="figures">
+          <li>UTS <b>297.8</b> vs <b>754.5 MPa</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <!-- Swap in a photo: <div class="pic" data-caption="..."><img src="images/macropad.jpg" alt="..."></div> -->
+      <div class="pic empty">photo to come</div>
+      <div>
+        <h3>Nine-key macropad</h3>
+        <p class="where">Personal project · May 2026</p>
+        <p class="links"><a href="https://github.com/BenGreenberg07/custom-micropad">schematic, PCB, firmware</a></p>
+        <p>Schematic and PCB in KiCad, hand-soldered, with custom QMK firmware and a printed case. Two keys were dead
+          on first power-up; probing with a multimeter found a cold joint. Start to finish in a week.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="pic" data-caption="The printed attachment on the PHANToM Premium stylus, in use.">
+        <img src="images/haptic.jpg" alt="Custom haptic attachment in use" loading="lazy">
+      </div>
+      <div>
+        <h3>Finger attachment for a haptic device</h3>
+        <p class="where">Hand control lab, Swarthmore · 2025 – now</p>
+        <p class="links"><a href="https://github.com/BenGreenberg07/geomagic-phantom">code</a></p>
+        <p>The stock stylus forces a whole-hand grip, which made the finger-by-finger strength measurements the
+          study needs impossible. I designed an attachment for one- or two-finger use, sized for post-stroke hands
+          and grip strength, and wrote the C++ for force feedback and position tracking. The lab's patient protocol
+          is now built around it.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="pic" data-caption="Every state the Swarthmore board can show, from on time to delayed to the last train of the night.">
+        <img src="images/septa_boards.jpg" alt="Grid of LED departure board states" loading="lazy">
+      </div>
+      <div>
+        <h3>SEPTA departure board</h3>
+        <p class="where">Personal project · May 2026 – now</p>
+        <p class="links"><a href="https://github.com/BenGreenberg07/septa-tracker">code</a></p>
+        <p>A 16-panel HUB75 LED board on a Raspberry Pi 5 (5 V, 100 A), inherited as a rough senior design
+          prototype. I rewrote the Python display layer to show live train positions from SEPTA's TrainView GPS
+          feed, and I'm redesigning the enclosure for outdoor mounting ahead of a station install with SEPTA.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="pic" data-caption="Traxxas chassis with onboard compute, motor controller, and the scanning LiDAR used for SLAM.">
+        <img src="images/f1tenth.jpg" alt="F1TENTH autonomous race car" loading="lazy">
+      </div>
+      <div>
+        <h3>F1TENTH race car</h3>
+        <p class="where">Swarthmore Robotics Club · 2026 – now</p>
+        <p>A 1/10-scale autonomous car. As club president I split perception, planning and control across the team
+          and integrated LiDAR SLAM with the ROS navigation stack. The club went from no autonomy platform at all to
+          SLAM and navigation running on the car.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Smaller things ============ -->
+  <section id="code">
+    <h2>Smaller things</h2>
+    <ul class="plain">
+      <li><a class="rn" href="https://github.com/BenGreenberg07/chit">chit</a>: split a restaurant bill from a photo of the receipt, in the phone browser.</li>
+      <li><a class="rn" href="https://github.com/BenGreenberg07/freesolv-ml">freesolv-ml</a>: predicting hydration free energies from SMILES (Stevens research project).</li>
+    </ul>
+  </section>
+
+  <!-- ============ Skills ============ -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Bench</dt><dd>Soldering, continuity testing, FDM printing, tensile testing, Raspberry Pi, ESP32, motion capture</dd>
+      <dt>Code</dt><dd>C, C++, Python, MATLAB, ROS</dd>
+      <dt>CAD / EDA</dt><dd>KiCad, SolidWorks, Fusion</dd>
+      <dt>Courses</dt><dd>Circuit Analysis, Differential Equations, Engineering Mechanics, Electricity and Magnetism, Multivariable Calculus; Engineering Dynamics (fall 2026); Linear Systems Analysis (spring 2027)</dd>
+      <dt>Languages</dt><dd>English, French</dd>
+    </dl>
+  </section>
+
+  <!-- ============ Education & leadership ============ -->
+  <section id="education">
+    <h2>Education and leadership</h2>
+    <div class="row">
+      <div class="date">Class of 2029</div>
+      <div>
+        <h3>Swarthmore College</h3>
+        <p class="where">B.S. Engineering, B.A. Economics. GPA 3.93. Sigma Xi.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="date">Feb 2026 – now</div>
+      <div><h3>President, Swarthmore Robotics Club</h3></div>
+    </div>
+    <div class="row">
+      <div class="date">Nov 2025 – now</div>
+      <div><h3>Campus tour guide, Swarthmore Admissions</h3></div>
+    </div>
+    <div class="row">
+      <div class="date">Sep 2020 – now</div>
+      <div>
+        <h3>Founder, video and graphic design business</h3>
+        <p class="where">Minecraft art channel, now 55,000+ YouTube subscribers and 86,000+ TikTok followers.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="date">Also</div>
+      <div><p class="where">Club squash (captain), Ceramics Club (founder), Chabad executive board.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ News ============ -->
+  <section id="news">
+    <h2>News</h2>
+    <table class="news" id="newsTable">
+      <tr><td class="date">Oct 2026</td><td>HINT-Blimp given as a spotlight talk at the <a href="https://nocworkshop.github.io/2026-IROS/">IROS 2026 workshop on nonverbal cues</a> in Pittsburgh.</td></tr>
+      <tr><td class="date">Sep 2026</td><td>HINT-Blimp is on <a href="https://arxiv.org/abs/2609.27154">arXiv</a>.</td></tr>
+      <tr><td class="date">Aug 2026</td><td>Finished the summer at Lehigh. The blimp gets back within 1.5 m of target in 95% of push trials.</td></tr>
+      <tr><td class="date">May 2026</td><td>Started in the Aerial Swarms Lab at Lehigh.</td></tr>
+      <tr class="older"><td class="date">Apr 2026</td><td>Our 6.45 lb truss held 1,000 lb.</td></tr>
+      <tr class="older"><td class="date">Feb 2026</td><td>Took over as president of the Swarthmore Robotics Club.</td></tr>
+      <tr class="older"><td class="date">Oct 2025</td><td>Joined the hand control lab at Swarthmore.</td></tr>
+      <tr class="older"><td class="date">Jun 2025</td><td>Started the vaccination modeling project with Hsuan-Wei Lee at Lehigh.</td></tr>
+    </table>
+    <button class="more" id="newsBtn" type="button">Older</button>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Benjamin Greenberg · Swarthmore, PA · updated October 2026</div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged picture">
+  <img alt="">
+  <p></p>
+</div>
+
+<script src="editorial.js"></script>
+</body>
+</html>
