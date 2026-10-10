@@ -340,3 +340,13 @@ section { padding-top: 24px; }
 }
 .entry.pub .hint { display: none; }
 .strip { grid-auto-rows: 240px; }
+
+.thumb.tall { aspect-ratio: 3 / 4; width: 150px; justify-self: center; }
+.clubs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.club { border-top: 2px solid var(--accent); padding-top: 8px; }
+.club h3 { font-size: 15px; }
+.club span { font: 500 12px var(--mono); color: var(--muted); letter-spacing: .02em; }
+@media (max-width: 760px) {
+  .thumb.tall { width: 60%; justify-self: start; }
+  .clubs { grid-template-columns: 1fr 1fr; }
+}
