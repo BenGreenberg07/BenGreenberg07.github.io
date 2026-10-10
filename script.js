@@ -1,15 +1,6 @@
 (function () {
   var root = document.documentElement;
 
-  // Theme toggle
-  document.getElementById("themeBtn").addEventListener("click", function () {
-    var dark = root.dataset.theme
-      ? root.dataset.theme === "dark"
-      : matchMedia("(prefers-color-scheme: dark)").matches;
-    root.dataset.theme = dark ? "light" : "dark";
-    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
-  });
-
   // Top bar border + active nav link
   var bar = document.getElementById("topbar");
   var links = [].slice.call(document.querySelectorAll(".nav a[href^='#']"));

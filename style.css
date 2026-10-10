@@ -16,37 +16,6 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111214;
-    --surface: #18191c;
-    --text: #ececef;
-    --muted: #a6a6ae;
-    --faint: #7c7c85;
-    --line: #2a2b30;
-    --accent: #e0576d;
-    --accent-soft: #2a1a1e;
-    --link: #7fb0ff;
-    --chip: #222328;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #111214;
-  --surface: #18191c;
-  --text: #ececef;
-  --muted: #a6a6ae;
-  --faint: #7c7c85;
-  --line: #2a2b30;
-  --accent: #e0576d;
-  --accent-soft: #2a1a1e;
-  --link: #7fb0ff;
-  --chip: #222328;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
-  color-scheme: dark;
-}
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
@@ -85,20 +54,6 @@ img { display: block; max-width: 100%; }
 .nav { display: flex; gap: 18px; margin-left: auto; font-size: 14px; }
 .nav a { color: var(--muted); }
 .nav a:hover, .nav a.active { color: var(--text); text-decoration: none; }
-.theme-btn {
-  border: 1px solid var(--line); background: var(--surface); color: var(--muted);
-  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
-  cursor: pointer; transition: color .2s, border-color .2s; flex: none;
-}
-.theme-btn:hover { color: var(--text); border-color: var(--faint); }
-.theme-btn svg { width: 16px; height: 16px; }
-.theme-btn .sun { display: none; }
-:root[data-theme="dark"] .theme-btn .sun { display: block; }
-:root[data-theme="dark"] .theme-btn .moon { display: none; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-btn .sun { display: block; }
-  :root:not([data-theme="light"]) .theme-btn .moon { display: none; }
-}
 
 /* ---------- hero ---------- */
 .hero {
@@ -342,7 +297,7 @@ section { padding-top: 24px; }
 .strip { grid-auto-rows: 240px; }
 
 .thumb.tall { aspect-ratio: 3 / 4; width: 150px; justify-self: center; }
-.clubs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.clubs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .club { border-top: 2px solid var(--accent); padding-top: 8px; }
 .club h3 { font-size: 15px; }
 .club span { font: 500 12px var(--mono); color: var(--muted); letter-spacing: .02em; }
