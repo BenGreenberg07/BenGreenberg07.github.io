@@ -296,13 +296,14 @@ section { padding-top: 24px; }
 .entry.pub .hint { display: none; }
 .strip { grid-auto-rows: 240px; }
 
-.thumb.tall { aspect-ratio: 3 / 4; width: 150px; justify-self: center; }
 @media (max-width: 760px) {
-  .thumb.tall { width: 60%; justify-self: start; }
-}
+  }
 
 .clubs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; font-size: 14.5px; color: var(--muted); }
 .clubs b { color: var(--text); font-weight: 600; }
 #code .when a { font-family: var(--mono); color: var(--link); }
 @media (max-width: 760px) { .clubs { grid-template-columns: 1fr; } }
 .job ul.clubs { padding-left: 0; }
+.thumb.tall { width: 190px; aspect-ratio: 1; }
+.thumb.tall img { object-position: 50% 62%; }
+@media (max-width: 760px) { .thumb.tall { width: 100%; aspect-ratio: 4 / 3; } }
