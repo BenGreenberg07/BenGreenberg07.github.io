@@ -56,7 +56,8 @@ You maintain Benjamin Greenberg's portfolio site in this folder (index.html). Hi
 Update index.html so its text matches the resume. Rules:
 - Only change wording, numbers, dates, and facts that the resume changed. Keep the page's structure, styling, links, photos, and sections.
 - Never add claims, numbers, or achievements that aren't in the resume.
-- Keep things Ben added on purpose even if the resume lacks them: 180 Degrees Consulting in Clubs, "Professor Towles' Biomechanics Lab", the HINT-Blimp and vaccination paper entries, Google Scholar, the F1TENTH link.
+- Keep things Ben added on purpose even if the resume lacks them or words them differently: "Professor Towles' Biomechanics Lab", the HINT-Blimp and vaccination paper entries, Google Scholar, the F1TENTH link.
+- PINNED, never change or remove these, whatever the resume says: the Clubs entry "180 Degrees Consulting, Consultant" (spelled exactly that way) and the "Linear Algebra" coursework chip. Anything marked with an HTML comment "pinned: keep on resume sync" is also off limits.
 - MakerWorld stays off the site. No phone number. No em dashes.
 - If nothing on the page needs to change, change nothing.
 When done, if index.html changed: git add index.html, commit with a short message (no co-author trailer), and git push.
