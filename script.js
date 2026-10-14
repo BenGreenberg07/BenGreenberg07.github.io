@@ -54,3 +54,19 @@
   if (/[?&]print\b/.test(location.search)) eager();
   window.addEventListener("beforeprint", eager);
 })();
+
+// Printing: show project links as short readable addresses (a bare "code" means nothing on paper)
+(function () {
+  var saved = [];
+  function shorten() {
+    saved = [];
+    document.querySelectorAll(".entry-links a").forEach(function (a) {
+      saved.push([a, a.textContent]);
+      a.textContent = a.href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+    });
+  }
+  function restore() { saved.forEach(function (p) { p[0].textContent = p[1]; }); }
+  if (/[?&]print\b/.test(location.search)) document.addEventListener("DOMContentLoaded", shorten);
+  window.addEventListener("beforeprint", shorten);
+  window.addEventListener("afterprint", restore);
+})();

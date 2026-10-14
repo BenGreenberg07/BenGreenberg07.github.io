@@ -68,7 +68,12 @@
         <a href="cv/Benjamin_Greenberg_CV.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>CV</a>
       </div>
-      <p class="print-contact">bgreenb2@swarthmore.edu · <a href="https://bengreenberg07.github.io">bengreenberg07.github.io</a> · <a href="https://github.com/BenGreenberg07">github.com/BenGreenberg07</a> · <a href="https://www.linkedin.com/in/benjamin-greenberg-/">linkedin.com/in/benjamin-greenberg-</a></p>
+      <div class="print-contact">
+        <span><b>Email</b> bgreenb2@swarthmore.edu</span>
+        <span><b>Web</b> <a href="https://bengreenberg07.github.io">bengreenberg07.github.io</a></span>
+        <span><b>GitHub</b> <a href="https://github.com/BenGreenberg07">BenGreenberg07</a></span>
+        <span><b>LinkedIn</b> <a href="https://www.linkedin.com/in/benjamin-greenberg-/">benjamin-greenberg-</a></span>
+      </div>
     </div>
     <div class="portrait">
       <img src="images/ben.jpg" alt="Portrait of Benjamin Greenberg" width="600" height="600">
@@ -161,6 +166,23 @@
     <div class="sec-head"><h2>Projects</h2><span class="count">05</span></div>
     <p class="sec-sub">Selected projects from class, research, and on my own.</p>
     <div class="entries">
+
+      <!-- Blimp: shown in the PDF export only (on the site it lives under Research) -->
+      <div class="entry print-block">
+        <div class="thumb">
+          <img src="images/ben_blimp.jpg" alt="Ben with the autonomous blimp in the Lehigh flight arena">
+        </div>
+        <div>
+          <h3>Autonomous Blimp Drone</h3>
+          <p class="meta"><a href="https://swarmslab.com/">Aerial Swarms Lab</a>, Lehigh University · May – Aug 2026</p>
+          <p class="entry-links"><a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a><a href="https://arxiv.org/abs/2609.27154">paper</a></p>
+          <p>Designed and 3D-printed a custom frame integrating an ESP32 microcontroller and IMU at a 29 g total
+            system weight, iterating over 10+ builds. Wrote a pure-pursuit and PD controller in C that cut post-push
+            position error 67% (1.27 to 0.42 m) and returned the blimp to within 1.5 m of target in 95% of
+            motion-capture trials, with a 13.2 s median recovery. Second author on
+            <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, presented at IROS 2026.</p>
+        </div>
+      </div>
 
       <!-- 2. Truss -->
       <div class="entry">

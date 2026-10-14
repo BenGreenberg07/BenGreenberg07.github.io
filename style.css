@@ -309,13 +309,22 @@ section { padding-top: 24px; }
 @media (max-width: 760px) { .thumb.tall { width: 100%; aspect-ratio: 4 / 3; } }
 
 /* ---------- print / PDF export ---------- */
-.print-contact, .print-only { display: none; }
+.print-contact, .print-only, .print-block { display: none; }
 @page { size: letter; margin: 0.5in 0.6in; }
 @media print {
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html { scroll-padding-top: 0; }
   body { font-size: 10pt; line-height: 1.45; background: #fff; }
   .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, #code, footer { display: none !important; }
+  /* the PDF is a projects portfolio: the resume covers the rest */
+  .callout, #publications, #experience, #skills, #leadership, .sec-head .count, .sec-sub { display: none !important; }
+  .entry.print-block { display: grid; }
+  #projects .entry { grid-template-columns: 220px 1fr; gap: 18px; padding: 13px 0; }
+  #projects .thumb { width: 220px; border-radius: 6px; }
+  #projects .thumb.tall { width: 220px; aspect-ratio: 4 / 3; }
+  #projects h3 { font-size: 11pt; }
+  #projects .entries { display: flex; flex-direction: column; }
+  #projects .entry:has(.thumb.placeholder) { order: 99; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .wrap { max-width: none; padding: 0; }
   a { color: var(--link); text-decoration: none; }
@@ -328,7 +337,11 @@ section { padding-top: 24px; }
   .portrait::after { display: none; }
   .portrait img { box-shadow: none; }
   .callout { margin: 8px 0; padding: 6px 10px; font-size: 9.5pt; }
-  .print-contact { display: block; font-size: 9pt; color: var(--muted); margin: 6px 0 0; }
+  .print-contact { display: flex; flex-wrap: wrap; gap: 3px 13px; margin: 8px 0 0; font-size: 8.5pt; color: var(--text); }
+  .print-contact b { font: 500 7.5pt var(--mono); color: var(--faint); text-transform: uppercase; letter-spacing: .06em; margin-right: 4px; }
+  .entry-links { font-family: var(--mono); font-size: 7.5pt; margin-top: 1px; }
+  .entry-links a { font-weight: 500; color: #4a6fa5; }
+  .entry-links a + a::before { content: "·"; margin: 0 6px; }
   .print-only { display: inline; }
 
   section { padding: 12px 0 0; }
