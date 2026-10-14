@@ -47,3 +47,10 @@
   box.addEventListener("click", close);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
 })();
+
+// Printing / PDF export: load every image up front (lazy images below the fold would print blank)
+(function () {
+  function eager() { document.querySelectorAll('img[loading="lazy"]').forEach(function (i) { i.loading = "eager"; }); }
+  if (/[?&]print\b/.test(location.search)) eager();
+  window.addEventListener("beforeprint", eager);
+})();

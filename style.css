@@ -307,3 +307,62 @@ section { padding-top: 24px; }
 .thumb.tall { width: 190px; aspect-ratio: 1; }
 .thumb.tall img { object-position: 50% 62%; }
 @media (max-width: 760px) { .thumb.tall { width: 100%; aspect-ratio: 4 / 3; } }
+
+/* ---------- print / PDF export ---------- */
+.print-contact, .print-only { display: none; }
+@page { size: letter; margin: 0.5in 0.6in; }
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html { scroll-padding-top: 0; }
+  body { font-size: 10pt; line-height: 1.45; background: #fff; }
+  .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, #code { display: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  a { color: var(--link); text-decoration: none; }
+
+  .hero { grid-template-columns: 1fr 112px; gap: 28px; padding: 0 0 6px; align-items: start; }
+  .hero h1 { font-size: 24pt; margin-bottom: 2px; }
+  .hero .role { margin-bottom: 10px; font-size: 9pt; }
+  .hero p { margin-bottom: 6px; }
+  .portrait { width: 112px; order: 0; justify-self: end; }
+  .portrait::after { display: none; }
+  .portrait img { box-shadow: none; }
+  .callout { margin: 8px 0; padding: 6px 10px; font-size: 9.5pt; }
+  .print-contact { display: block; font-size: 9pt; color: var(--muted); margin: 6px 0 0; }
+  .print-only { display: inline; }
+
+  section { padding: 12px 0 0; }
+  .sec-head { margin-bottom: 2px; break-after: avoid; }
+  h2 { font-size: 13.5pt; }
+  .sec-sub { margin: 0 0 6px; font-size: 9.5pt; }
+
+  .entry { grid-template-columns: 150px 1fr; gap: 16px; padding: 10px 0; break-inside: avoid; }
+  .thumb { width: 150px; box-shadow: 0 0 0 0.5pt var(--line); }
+  .thumb img { transform: none !important; }
+  .thumb.tall { width: 150px; aspect-ratio: 4 / 3; }
+  .entry.pub { grid-template-columns: 96px 1fr; gap: 14px; padding: 7px 0; }
+  .entry.pub .thumb { width: 96px; }
+  .entry h3 { font-size: 10.5pt; margin-bottom: 1px; }
+  .meta, .venue, .entry-links { font-size: 9pt; margin: 0; }
+  .entry p { font-size: 9.5pt; margin-top: 3px; }
+  /* no empty photo boxes on paper */
+  .thumb.placeholder { display: none; }
+  .entry:has(.thumb.placeholder) > div:last-child { grid-column: 2; }
+
+  .job { grid-template-columns: 112px 1fr; gap: 16px; padding: 7px 0; break-inside: avoid; }
+  .when { font-size: 8.5pt; }
+  .job h3 { font-size: 10.5pt; }
+  .job .org { font-size: 9.5pt; margin-bottom: 2px; }
+  .job ul, .job li { font-size: 9.5pt; }
+  .job li { margin: 1px 0; }
+
+  .skills { grid-template-columns: 112px 1fr; gap: 5px 16px; font-size: 9pt; break-inside: avoid; }
+  .skills dt { font-size: 8.5pt; line-height: 1.8; }
+  .chip { font-size: 8.5pt; padding: 1px 7px; }
+  .clubs { font-size: 9.5pt; }
+
+  .entry, .job { border-top: 0 !important; }
+  .clubs { grid-template-columns: 1fr 1fr; }
+
+  footer { margin-top: 14px; padding: 8px 0 0; font-size: 8.5pt; }
+}
