@@ -315,7 +315,7 @@ section { padding-top: 24px; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html { scroll-padding-top: 0; }
   body { font-size: 10pt; line-height: 1.45; background: #fff; }
-  .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, #code { display: none !important; }
+  .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, #code, footer { display: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .wrap { max-width: none; padding: 0; }
   a { color: var(--link); text-decoration: none; }
