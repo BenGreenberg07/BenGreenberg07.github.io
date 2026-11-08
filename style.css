@@ -378,3 +378,52 @@ section { padding-top: 24px; }
 
   footer { margin-top: 14px; padding: 8px 0 0; font-size: 8.5pt; }
 }
+
+/* ---------- phones (screen only: a letter page is narrow enough to match this width too) ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (hover: none) {
+  .thumb .hint { display: none; }
+  .thumb:hover .alt { opacity: 0; }
+  .thumb:hover img { transform: none; }
+}
+@media screen and (max-width: 760px) {
+  /* Section links replace the name in the bar; the name is right there in the header */
+  .brand { display: none; }
+  .topbar .wrap { height: 48px; }
+  .nav { display: flex; width: 100%; margin: 0; justify-content: space-between; }
+  .nav a { padding: 12px 0; }
+  html { scroll-padding-top: 60px; }
+
+  /* Header: name beside a small photo, so the links land on the first screen */
+  .hero { grid-template-columns: 1fr 84px; gap: 0 16px; padding: 72px 0 8px; align-items: center; }
+  .hero > div:first-child { display: contents; }
+  .hero > div:first-child > * { grid-column: 1 / -1; }
+  .hero > div:first-child > h1, .hero > div:first-child > .role { grid-column: 1; }
+  .portrait { order: 0; grid-column: 2; grid-row: 1 / span 2; width: 84px; justify-self: end; }
+  .portrait::after { display: none; }
+  .hero h1 { font-size: 30px; margin-bottom: 4px; }
+  .hero .role { font-size: 12px; line-height: 1.5; margin-bottom: 0; }
+  .hero > div:first-child > p:nth-of-type(2) { margin-top: 16px; }
+  .callout { margin: 14px 0 16px; }
+  .links a { padding: 9px 13px; }
+
+  section { padding: 24px 0 6px; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+
+  .venue .badge { display: table; margin: 5px 0 0; }
+
+  /* Projects: wide photos, and no empty box where a photo hasn't arrived yet */
+  .thumb.placeholder { display: none; }
+  .entry:not(.pub) .thumb { aspect-ratio: 16 / 10; }
+  .entry:not(.pub) .thumb.tall { aspect-ratio: 1; }
+  .entry { gap: 10px; }
+
+  /* One-line dates */
+  .when br { display: none; }
+  .job { gap: 2px; padding: 14px 0; }
+
+  .lightbox { padding: 16px; }
+  .lightbox img { max-height: 72vh; }
+  .lightbox img + img { margin-top: 10px; }
+  .lightbox:has(img + img:not([hidden])) img { max-height: 38vh; }
+}

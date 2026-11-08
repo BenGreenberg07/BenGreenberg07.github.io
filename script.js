@@ -29,15 +29,22 @@
   // Lightbox
   var box = document.getElementById("lightbox");
   var boxImg = box.querySelector("img");
+  var boxImg2 = box.querySelectorAll("img")[1];
+  var canHover = matchMedia("(hover: hover)").matches;
   var boxCap = box.querySelector("p");
   document.querySelectorAll(".thumb:not(.placeholder), .strip figure").forEach(function (el) {
     el.tabIndex = 0;
     function open() {
-      var hovering = el.matches(":hover") && el.querySelector(".alt");
-      var img = hovering ? el.querySelector(".alt") : el.querySelector("img");
+      var alt = el.querySelector(".alt");
+      var img = canHover && alt && el.matches(":hover") ? alt : el.querySelector("img");
       boxImg.src = img.src;
       boxImg.alt = img.alt;
-      boxCap.textContent = el.dataset.caption || img.alt;
+      // Touch screens can't hover, so the second view goes underneath the first
+      var both = !canHover && alt;
+      boxImg2.hidden = !both;
+      if (both) { boxImg2.src = alt.src; boxImg2.alt = alt.alt; }
+      var caption = el.dataset.caption || img.alt;
+      boxCap.textContent = canHover ? caption : caption.replace("Hover shows", "Also shown:");
       box.classList.add("open");
     }
     el.addEventListener("click", open);
