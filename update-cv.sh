@@ -58,6 +58,7 @@ Update index.html so its text matches the resume. Rules:
 - Never add claims, numbers, or achievements that aren't in the resume.
 - Keep things Ben added on purpose even if the resume lacks them or words them differently: "Professor Towles' Biomechanics Lab", the HINT-Blimp and vaccination paper entries, Google Scholar, the F1TENTH link.
 - PINNED, never change or remove these, whatever the resume says: the Clubs entry "180 Degrees Consulting, Consultant" (spelled exactly that way) and the "Linear Algebra" coursework chip. Anything marked with an HTML comment "pinned: keep on resume sync" is also off limits.
+- HINT-Blimp was presented at an IROS 2026 workshop, so never write "presented at IROS 2026" without the workshop. Keep "Continuity testing" off the Skills list, and keep the coursework chip "Statics" instead of "Engineering Static Mechanics".
 - MakerWorld stays off the site. No phone number. No em dashes.
 - If nothing on the page needs to change, change nothing.
 When done, if index.html changed: git add index.html, commit with a short message (no co-author trailer), and git push.

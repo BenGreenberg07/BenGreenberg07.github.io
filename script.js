@@ -31,28 +31,54 @@
   var boxImg = box.querySelector("img");
   var boxImg2 = box.querySelectorAll("img")[1];
   var canHover = matchMedia("(hover: hover)").matches;
+  var boxVid = box.querySelector("video");
   var boxCap = box.querySelector("p");
+  var opener = null;
   document.querySelectorAll(".thumb:not(.placeholder), .strip figure").forEach(function (el) {
+    var label = el.querySelector("img");
     el.tabIndex = 0;
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-label", "View larger: " + label.alt);
     function open() {
       var alt = el.querySelector(".alt");
       var img = canHover && alt && el.matches(":hover") ? alt : el.querySelector("img");
-      boxImg.src = img.src;
-      boxImg.alt = img.alt;
+      // The video is left out under "reduce motion", which falls back to its still photo
+      var vid = el.querySelector("video");
+      var showVid = vid && getComputedStyle(vid).display !== "none";
+      boxVid.hidden = !showVid;
+      boxImg.hidden = !!showVid;
+      if (showVid) { boxVid.src = vid.currentSrc; boxVid.play(); }
+      else { boxImg.src = img.src; boxImg.alt = img.alt; }
       // Touch screens can't hover, so the second view goes underneath the first
-      var both = !canHover && alt;
-      boxImg2.hidden = !both;
-      if (both) { boxImg2.src = alt.src; boxImg2.alt = alt.alt; }
+      var second = el.dataset.second
+        ? { src: el.dataset.second, alt: el.dataset.secondAlt }
+        : (!canHover && alt);
+      boxImg2.hidden = !second;
+      if (second) { boxImg2.src = second.src; boxImg2.alt = second.alt; }
+      box.classList.toggle("two", !!second);
       var caption = el.dataset.caption || img.alt;
       boxCap.textContent = canHover ? caption : caption.replace("Hover shows", "Also shown:");
       box.classList.add("open");
+      opener = el;
+      box.focus();
     }
     el.addEventListener("click", open);
-    el.addEventListener("keydown", function (e) { if (e.key === "Enter") open(); });
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+    });
   });
-  function close() { box.classList.remove("open"); }
+  function close() {
+    if (!box.classList.contains("open")) return;
+    box.classList.remove("open");
+    boxVid.pause();
+    if (opener) { opener.focus({ preventScroll: true }); opener = null; }
+  }
   box.addEventListener("click", close);
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") close();
+    // The viewer has nothing to tab to, so keep focus from moving behind it
+    if (e.key === "Tab" && box.classList.contains("open")) e.preventDefault();
+  });
 })();
 
 // Printing / PDF export: load every image up front (lazy images below the fold would print blank)

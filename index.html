@@ -4,12 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Benjamin Greenberg</title>
-  <meta name="description" content="Benjamin Greenberg: engineering and economics student at Swarthmore College building hardware, embedded systems, and robots.">
+  <meta name="description" content="Benjamin Greenberg: engineering and economics student at Swarthmore College working in robotics, mechanical engineering, and embedded systems.">
   <meta name="author" content="Benjamin Greenberg">
+  <link rel="canonical" href="https://bengreenberg07.github.io/">
   <meta property="og:title" content="Benjamin Greenberg">
-  <meta property="og:description" content="Hardware, embedded systems, and robotics. Swarthmore College.">
+  <meta property="og:description" content="Robotics, mechanical engineering, and embedded systems. Swarthmore College.">
+  <meta property="og:url" content="https://bengreenberg07.github.io/">
+  <meta property="og:site_name" content="Benjamin Greenberg">
   <meta property="og:image" content="https://bengreenberg07.github.io/images/ben_blimp.jpg">
-  <meta property="og:type" content="website">
+  <meta property="og:image:width" content="900">
+  <meta property="og:image:height" content="793">
+  <meta property="og:image:alt" content="Benjamin Greenberg with an autonomous blimp in a flight arena">
+  <meta property="og:type" content="profile">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Benjamin Greenberg",
+    "url": "https://bengreenberg07.github.io/",
+    "image": "https://bengreenberg07.github.io/images/ben.jpg",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Swarthmore College" },
+    "sameAs": [
+      "https://github.com/BenGreenberg07",
+      "https://www.linkedin.com/in/benjamin-greenberg-/",
+      "https://scholar.google.com/citations?user=JMRG6v8AAAAJ"
+    ]
+  }
+  </script>
   <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -49,12 +71,12 @@
         This summer I developed an autonomous indoor blimp in
         Prof. David Saldaña's
         Aerial Swarms Lab at Lehigh University, from the 29&nbsp;g
-        frame to the flight controller. During the school year I am working on a haptic robot for post-stroke
+        frame to the flight controller. During the school year I work on a haptic robot for post-stroke
         rehabilitation research at Swarthmore, model tipping points in vaccination behavior on social
         networks with Prof. Hsuan-Wei Lee at Lehigh, and lead the Swarthmore Robotics Club's F1TENTH autonomous racing team.
       </p>
       <div class="callout">
-        I'm looking for <strong>Summer 2027 internships</strong> in hardware, embedded systems, and robotics.
+        I'm looking for <strong>Summer 2027 internships</strong> in robotics, mechanical engineering, and embedded systems.
       </div>
       <div class="links">
         <a href="mailto:bgreenb2@swarthmore.edu">
@@ -85,11 +107,10 @@
     <div class="sec-head"><h2>Publications</h2></div>
     <div class="entries">
 
-      <div class="entry pub">
-        <div class="thumb" data-caption="The autonomous blimp holding position in the motion-capture arena at Lehigh. Hover shows the summer 2026 lab team.">
-          <img src="images/blimp.jpg" alt="Red helium blimp with a 3D-printed gondola" loading="lazy">
-          <img class="alt" src="images/lab_team.jpg" alt="Aerial Swarms Lab team with the blimp" loading="lazy">
-          <span class="hint">hover</span>
+      <div class="entry pub lead">
+        <div class="thumb" data-second="images/lab_team.jpg" data-second-alt="Aerial Swarms Lab team with the blimp" data-caption="The blimp in flight at Lehigh. Below: the summer 2026 lab team.">
+          <img src="images/blimp.jpg" alt="Red helium blimp with a 3D-printed gondola">
+          <video src="videos/blimp_loop.mp4" autoplay muted loop playsinline preload="auto" aria-label="The red blimp hovering in the lab as the camera circles it"></video>
         </div>
         <div>
           <h3><a href="https://arxiv.org/abs/2609.27154">HINT-Blimp: Human INTent Inference from Multimodal Cues for Robotic Blimps</a></h3>
@@ -129,7 +150,7 @@
             <li>Engineered an autonomous blimp for rehabilitation applications, working from airframe to flight software (<a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a>).</li>
             <li>Designed and 3D-printed a custom frame integrating an ESP32 and IMU at a <strong>29 g</strong> total system weight, iterating over 10+ builds.</li>
             <li>Wrote a pure-pursuit and PD controller in C that cut post-push position error <strong>67%</strong> (1.27 to 0.42 m) and returned the blimp to within 1.5 m of target in <strong>95%</strong> of motion-capture trials, with a 13.2 s median recovery.</li>
-            <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, a human-drone intent recognition paper presented at IROS 2026, with a preprint on arXiv.</li>
+            <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, a human-drone intent recognition paper presented at an IROS 2026 workshop, with a preprint on arXiv.</li><!-- pinned: keep on resume sync -->
           </ul>
         </div>
       </div>
@@ -180,7 +201,7 @@
             system weight, iterating over 10+ builds. Wrote a pure-pursuit and PD controller in C that cut post-push
             position error 67% (1.27 to 0.42 m) and returned the blimp to within 1.5 m of target in 95% of
             motion-capture trials, with a 13.2 s median recovery. Second author on
-            <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, presented at IROS 2026.</p>
+            <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, presented at an IROS 2026 workshop.</p>
         </div>
       </div>
 
@@ -204,7 +225,7 @@
       <div class="entry">
         <!-- PHOTO PLACEHOLDER: drop a photo at images/macropad.jpg and replace this div with
              <div class="thumb" data-caption="..."><img src="images/macropad.jpg" alt="..."></div> -->
-        <div class="thumb placeholder" aria-label="Photo coming soon">
+        <div class="thumb placeholder" role="img" aria-label="Photo coming soon">
           <div>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>
             <span>photo coming soon</span>
@@ -212,10 +233,12 @@
         </div>
         <div>
           <h3>Nine-Key Macropad, Custom PCB</h3>
-          <p class="meta">Independent project · May 2026</p>
+          <p class="meta">Independent project, Hack Club Blueprint · May 2026</p>
           <p class="entry-links"><a href="https://github.com/BenGreenberg07/custom-micropad">code &amp; PCB</a></p>
-          <p>Designed the schematic and PCB in KiCad for a 9-key macropad, hand-soldered it, and flashed custom
-            KMK firmware.</p>
+          <!-- pinned: keep on resume sync -->
+          <p>Designed the schematic and 2-layer PCB in KiCad for a 9-key macropad built around a Seeed XIAO RP2040,
+            with Cherry MX switches and addressable RGB. Hand-soldered it, 3D-printed the enclosure, and flashed custom
+            KMK firmware, so it works as a plug-and-play USB keyboard with fully programmable keys.</p>
         </div>
       </div>
 
@@ -261,8 +284,9 @@
           <h3>F1TENTH Autonomous Racing Car</h3>
           <p class="meta">Swarthmore Robotics Club, President · 2026 – present</p>
           <p class="entry-links"><a href="https://f1tenth.org/">F1TENTH</a></p>
-          <p>Leading an 8-person team building a 1/10-scale autonomous race car, integrating LiDAR-based SLAM with the ROS
-            navigation stack.</p>
+          <!-- pinned: keep on resume sync -->
+          <p>Leading an 8-person team on a 1/10-scale autonomous race car that drives itself from LiDAR using different
+            driving algorithms, with LiDAR-based SLAM integrated into the ROS navigation stack.</p>
         </div>
       </div>
 
@@ -274,13 +298,13 @@
     <div class="sec-head"><h2>Skills</h2></div>
     <dl class="skills">
       <dt>Hardware &amp; lab</dt>
-      <dd><span class="chip">Soldering</span><span class="chip">Continuity testing</span><span class="chip">FDM 3D printing</span><span class="chip">Tensile testing</span><span class="chip">Raspberry Pi</span><span class="chip">ESP32</span><span class="chip">Motion capture</span></dd>
+      <dd><span class="chip">Soldering</span><span class="chip">FDM 3D printing</span><span class="chip">Tensile testing</span><span class="chip">Raspberry Pi</span><span class="chip">ESP32</span><span class="chip">Motion capture</span></dd>
       <dt>Software</dt>
       <dd><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">ROS</span></dd>
       <dt>CAD &amp; EDA</dt>
       <dd><span class="chip">KiCad</span><span class="chip">SolidWorks</span><span class="chip">Autodesk Fusion</span></dd>
       <dt>Coursework</dt>
-      <dd><span class="chip">Circuit Analysis</span><span class="chip">Differential Equations</span><span class="chip">Mechanics of Solids</span><span class="chip">Engineering Static Mechanics</span><span class="chip">Electricity &amp; Magnetism</span><span class="chip">Multivariable Calculus</span><!-- pinned: keep on resume sync --><span class="chip">Linear Algebra</span></dd>
+      <dd><span class="chip">Circuit Analysis</span><span class="chip">Differential Equations</span><span class="chip">Mechanics of Solids</span><span class="chip">Statics</span><span class="chip">Electricity &amp; Magnetism</span><span class="chip">Multivariable Calculus</span><!-- pinned: keep on resume sync --><span class="chip">Linear Algebra</span></dd>
       <dt>Languages</dt>
       <dd><span class="chip">English</span><span class="chip">French (fluent)</span></dd>
     </dl>
@@ -330,11 +354,11 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Benjamin Greenberg · Swarthmore, PA</span>
-    <span>Updated October 2026<span class="print-only"> · bengreenberg07.github.io</span></span>
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+  <video muted loop playsinline hidden></video>
   <img alt="">
   <img alt="" hidden>
   <p></p>
