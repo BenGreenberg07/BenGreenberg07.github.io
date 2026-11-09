@@ -414,34 +414,29 @@ section { padding-top: 24px; }
   #experience[data-layout="c"] .when br { display: none; }
   #experience[data-layout="c"] .job > div:last-child { grid-column: 2; grid-row: 2; }
 
-  /* D: three cards with the photo on top */
-  #experience[data-layout="d"] .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 12px; }
-  #experience[data-layout="d"] .job { display: block; padding: 0 0 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
-  #experience[data-layout="d"] .side { display: flex; flex-direction: column-reverse; }
-  #experience[data-layout="d"] .thumb { width: 100%; aspect-ratio: 16 / 10; margin: 0; border-radius: 0; box-shadow: none; }
-  #experience[data-layout="d"] .when { padding: 10px 14px 0; }
-  #experience[data-layout="d"] .when br { display: none; }
-  #experience[data-layout="d"] .job > div:last-child { padding: 2px 14px 0; }
-  #experience[data-layout="d"] .job ul { font-size: 13.5px; }
-
-  /* E: larger photo alternating left and right */
-  #experience[data-layout="e"] .job { grid-template-columns: 190px 1fr; grid-template-rows: auto 1fr; gap: 0 22px; }
-  #experience[data-layout="e"] .side { display: contents; }
-  #experience[data-layout="e"] .thumb { grid-column: 1; grid-row: 1 / span 2; width: 190px; margin-top: 2px; }
-  #experience[data-layout="e"] .when { grid-column: 2; grid-row: 1; padding-top: 0; }
-  #experience[data-layout="e"] .when br { display: none; }
-  #experience[data-layout="e"] .job > div:last-child { grid-column: 2; grid-row: 2; }
-  #experience[data-layout="e"] .job:nth-child(even) { grid-template-columns: 1fr 190px; }
-  #experience[data-layout="e"] .job:nth-child(even) .thumb { grid-column: 2; }
-  #experience[data-layout="e"] .job:nth-child(even) .when,
-  #experience[data-layout="e"] .job:nth-child(even) > div:last-child { grid-column: 1; }
-
-  /* F: one row of photos at the top, text-only jobs below */
-  #experience[data-layout="f"] .timeline { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 12px; margin-top: 12px; }
+  /* F: text-only jobs, then one row of photos at the bottom */
+  #experience[data-layout="f"] .timeline { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 12px; margin-top: 4px; }
   #experience[data-layout="f"] .job, #experience[data-layout="f"] .side { display: contents; }
-  #experience[data-layout="f"] .thumb { grid-row: 1; grid-column: span 4; width: 100%; aspect-ratio: 16 / 10; margin: 0 0 8px; }
-  #experience[data-layout="f"] .when { grid-column: 1 / span 2; padding-top: 16px; }
-  #experience[data-layout="f"] .job > div:last-child { grid-column: 3 / -1; padding-top: 14px; padding-bottom: 12px; }
+  #experience[data-layout="f"] .thumb { grid-row: 4; grid-column: span 4; width: 100%; aspect-ratio: 4 / 3; margin: 10px 0 0; }
+  #experience[data-layout="f"] .when { grid-column: 1 / span 2; padding-top: 14px; }
+  #experience[data-layout="f"] .job > div:last-child { grid-column: 3 / -1; padding: 12px 0; }
+
+  /* G: date above the title, larger photo on the right */
+  #experience[data-layout="g"] .job { grid-template-columns: 1fr 230px; grid-template-rows: auto 1fr; gap: 0 24px; }
+  #experience[data-layout="g"] .side { display: contents; }
+  #experience[data-layout="g"] .thumb { grid-column: 2; grid-row: 1 / span 2; width: 230px; margin-top: 2px; }
+  #experience[data-layout="g"] .when { grid-column: 1; grid-row: 1; padding-top: 0; }
+  #experience[data-layout="g"] .when br { display: none; }
+  #experience[data-layout="g"] .job > div:last-child { grid-column: 1; grid-row: 2; }
+
+  /* H: largest photo on the left, date on the title line */
+  #experience[data-layout="h"] .job { grid-template-columns: 240px 1fr; gap: 0 24px; }
+  #experience[data-layout="h"] .side { display: contents; }
+  #experience[data-layout="h"] .thumb { grid-column: 1; grid-row: 1; width: 240px; margin-top: 2px; }
+  #experience[data-layout="h"] .when { grid-column: 2; grid-row: 1; justify-self: end; padding-top: 2px; }
+  #experience[data-layout="h"] .when br { display: none; }
+  #experience[data-layout="h"] .job > div:last-child { grid-column: 2; grid-row: 1; }
+  #experience[data-layout="h"] .job h3 { padding-right: 150px; }
 }
 .layout-bar {
   position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 60;

@@ -41,7 +41,7 @@
     el.setAttribute("aria-label", "View larger: " + label.alt);
     function open() {
       var alt = el.querySelector(".alt");
-      var img = canHover && alt && el.matches(":hover") ? alt : el.querySelector("img");
+      var img = canHover && alt && !el.dataset.second && el.matches(":hover") ? alt : el.querySelector("img");
       // The video is left out under "reduce motion", which falls back to its still photo
       var vid = el.querySelector("video");
       var showVid = vid && getComputedStyle(vid).display !== "none";
@@ -50,8 +50,9 @@
       if (showVid) { boxVid.src = vid.currentSrc; boxVid.play(); }
       else { boxImg.src = img.src; boxImg.alt = img.alt; }
       // Touch screens can't hover, so the second view goes underneath the first
-      var second = (!canHover && alt) ||
-        (el.dataset.second ? { src: el.dataset.second, alt: el.dataset.secondAlt } : null);
+      var second = el.dataset.second
+        ? { src: el.dataset.second, alt: el.dataset.secondAlt }
+        : (!canHover && alt);
       boxImg2.hidden = !second;
       if (second) { boxImg2.src = second.src; boxImg2.alt = second.alt; }
       box.classList.toggle("two", !!second);
@@ -89,7 +90,7 @@
   bar.setAttribute("role", "group");
   bar.setAttribute("aria-label", "Research layout");
   bar.innerHTML = "<span>Research layout</span>";
-  var options = [["b", "B: right side"], ["c", "C: photo left"], ["d", "D: cards"], ["e", "E: zigzag"], ["f", "F: photo row"]];
+  var options = [["b", "B: right side"], ["c", "C: photo left"], ["f", "F: photos at bottom"], ["g", "G: big photo right"], ["h", "H: big photo left"]];
   var buttons = options.map(function (o) {
     var b = document.createElement("button");
     b.type = "button";
