@@ -464,8 +464,6 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   .job .thumb { order: 2; width: 100%; aspect-ratio: 16 / 10; margin-top: 10px; }
 }
 
-/* Whole truss in frame: this photo is much wider than 4:3 */
-.entry:not(.pub) .thumb.wide { aspect-ratio: 900 / 439; }
 
 /* The figure preview is cropped to 16:10 so it fills its frame */
 #experience .thumb.fig { aspect-ratio: 16 / 10; background: #fff; }
