@@ -397,14 +397,15 @@ section { padding-top: 24px; }
 .lightbox.two img + img { margin-top: 10px; }
 .thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* ---------- research layout: photo on the left, date above the title ---------- */
+/* ---------- research layout: photo on the left, date at the far right of the title line ---------- */
 @media screen and (min-width: 761px) {
-  #experience .job { grid-template-columns: 190px 1fr; grid-template-rows: auto 1fr; gap: 0 22px; }
+  #experience .job { grid-template-columns: 215px 1fr; gap: 0 24px; }
   #experience .side { display: contents; }
-  #experience .thumb { grid-column: 1; grid-row: 1 / span 2; width: 190px; margin-top: 2px; }
-  #experience .when { grid-column: 2; grid-row: 1; padding-top: 0; }
+  #experience .thumb { grid-column: 1; grid-row: 1; width: 215px; margin-top: 2px; }
+  #experience .when { grid-column: 2; grid-row: 1; justify-self: end; padding-top: 2px; }
   #experience .when br { display: none; }
-  #experience .job > div:last-child { grid-column: 2; grid-row: 2; }
+  #experience .job > div:last-child { grid-column: 2; grid-row: 1; }
+  #experience .job h3 { padding-right: 150px; }
 }
 
 /* ---------- phones (screen only: a letter page is narrow enough to match this width too) ---------- */
