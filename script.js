@@ -50,9 +50,8 @@
       if (showVid) { boxVid.src = vid.currentSrc; boxVid.play(); }
       else { boxImg.src = img.src; boxImg.alt = img.alt; }
       // Touch screens can't hover, so the second view goes underneath the first
-      var second = el.dataset.second
-        ? { src: el.dataset.second, alt: el.dataset.secondAlt }
-        : (!canHover && alt);
+      var second = (!canHover && alt) ||
+        (el.dataset.second ? { src: el.dataset.second, alt: el.dataset.secondAlt } : null);
       boxImg2.hidden = !second;
       if (second) { boxImg2.src = second.src; boxImg2.alt = second.alt; }
       box.classList.toggle("two", !!second);
@@ -90,7 +89,7 @@
   bar.setAttribute("role", "group");
   bar.setAttribute("aria-label", "Research layout");
   bar.innerHTML = "<span>Research layout</span>";
-  var options = [["a", "A: under date"], ["b", "B: right side"], ["c", "C: photo left"]];
+  var options = [["b", "B: right side"], ["c", "C: photo left"], ["d", "D: cards"], ["e", "E: zigzag"], ["f", "F: photo row"]];
   var buttons = options.map(function (o) {
     var b = document.createElement("button");
     b.type = "button";
@@ -103,7 +102,7 @@
     section.dataset.layout = id;
     buttons.forEach(function (b, i) { b.setAttribute("aria-pressed", String(options[i][0] === id)); });
   }
-  pick("a");
+  pick(section.dataset.layout);
   document.body.appendChild(bar);
 })();
 

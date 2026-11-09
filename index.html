@@ -138,15 +138,15 @@
   </section>
 
   <!-- ================= EXPERIENCE ================= -->
-  <section id="experience" class="reveal">
+  <section id="experience" class="reveal" data-layout="c">
     <div class="sec-head"><h2>Research Experience</h2></div>
     <div class="timeline">
       <div class="job">
         <div class="side">
           <div class="when">May 2026 – <br>Aug 2026</div>
-          <div class="thumb" data-caption="The 29 g autonomous blimp in the motion-capture arena at Lehigh. Hover shows the summer 2026 lab team.">
+          <div class="thumb" data-second="images/lab_team.jpg" data-second-alt="Aerial Swarms Lab team with the blimp" data-caption="The 29 g autonomous blimp at Lehigh, its 3D-printed frame in CAD, and the summer 2026 lab team.">
             <img src="images/blimp.jpg" alt="Red helium blimp with a 3D-printed gondola" loading="lazy">
-            <img class="alt" src="images/lab_team.jpg" alt="Aerial Swarms Lab team with the blimp" loading="lazy">
+            <img class="alt" src="images/blimp_frame.jpg" alt="CAD render of the 3D-printed blimp frame" loading="lazy">
             <span class="hint">hover</span>
           </div>
         </div>
@@ -156,8 +156,8 @@
           <ul>
             <li>Engineered an autonomous blimp for rehabilitation applications, working from airframe to flight software (<a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a>, <a href="posters/blimp.pdf">poster</a>).</li>
             <li>Designed and 3D-printed a custom frame integrating an ESP32 and IMU at a <strong>29 g</strong> total system weight, iterating over 10+ builds.</li>
-            <li>Wrote a pure-pursuit and PD controller in C that cut post-push position error <strong>67%</strong> (1.27 to 0.42 m) and returned the blimp to within 1.5 m of target in <strong>95%</strong> of motion-capture trials, with a 13.2 s median recovery.</li>
-            <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, a human-drone intent recognition paper presented at an IROS 2026 workshop, with a preprint on arXiv.</li><!-- pinned: keep on resume sync -->
+            <li>Wrote a pure-pursuit and PD controller in C that returned the blimp toward its commanded point after <strong>all 23</strong> hand pushes of up to <strong>4.1 m</strong>, with <strong>78%</strong> settling within 0.8 m and a 15 s median to remove 80% of the offset.</li><!-- pinned: keep on resume sync -->
+            <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, a human-drone intent recognition paper presented at an IROS 2026 workshop.</li><!-- pinned: keep on resume sync -->
           </ul>
         </div>
       </div>
@@ -215,9 +215,9 @@
           <p class="meta"><a href="https://swarmslab.com/">Aerial Swarms Lab</a>, Lehigh University · May – Aug 2026</p>
           <p class="entry-links"><a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a><a href="https://bengreenberg07.github.io/posters/blimp.pdf">poster</a><a href="https://arxiv.org/abs/2609.27154">paper</a></p>
           <p>Designed and 3D-printed a custom frame integrating an ESP32 microcontroller and IMU at a 29 g total
-            system weight, iterating over 10+ builds. Wrote a pure-pursuit and PD controller in C that cut post-push
-            position error 67% (1.27 to 0.42 m) and returned the blimp to within 1.5 m of target in 95% of
-            motion-capture trials, with a 13.2 s median recovery. Second author on
+            system weight, iterating over 10+ builds. Wrote a pure-pursuit and PD controller in C that returned the
+            blimp toward its commanded point after all 23 hand pushes of up to 4.1 m, with 78% settling within 0.8 m
+            and a 15 s median to remove 80% of the offset. Second author on
             <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, presented at an IROS 2026 workshop.</p>
         </div>
       </div>
