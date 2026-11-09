@@ -48,7 +48,7 @@
       boxVid.hidden = !showVid;
       boxImg.hidden = !!showVid;
       if (showVid) { boxVid.src = vid.currentSrc; boxVid.play(); }
-      else { boxImg.src = img.src; boxImg.alt = img.alt; }
+      else { boxImg.src = (img !== alt && el.dataset.full) || img.src; boxImg.alt = img.alt; }
       // Touch screens can't hover, so the second view goes underneath the first
       var second = el.dataset.second
         ? { src: el.dataset.second, alt: el.dataset.secondAlt }
