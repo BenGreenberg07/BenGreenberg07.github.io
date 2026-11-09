@@ -1,6 +1,4 @@
 (function () {
-  var root = document.documentElement;
-
   // Top bar border + active nav link
   var bar = document.getElementById("topbar");
   var links = [].slice.call(document.querySelectorAll(".nav a[href^='#']"));
@@ -26,38 +24,70 @@
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Lightbox
+  // Photo viewer: each thumbnail opens its views one at a time
   var box = document.getElementById("lightbox");
   var boxImg = box.querySelector("img");
-  var boxImg2 = box.querySelectorAll("img")[1];
-  var canHover = matchMedia("(hover: hover)").matches;
   var boxVid = box.querySelector("video");
-  var boxCap = box.querySelector("p");
-  var opener = null;
-  document.querySelectorAll(".thumb:not(.placeholder), .strip figure").forEach(function (el) {
-    var label = el.querySelector("img");
+  var boxCap = box.querySelector(".lb-cap");
+  var boxCount = box.querySelector(".lb-count");
+  var prevBtn = box.querySelector(".lb-prev");
+  var nextBtn = box.querySelector(".lb-next");
+  var opener = null, views = [], at = 0;
+
+  function viewsFor(el) {
+    var list = [], main = el.querySelector("img"), vid = el.querySelector("video"), alt = el.querySelector(".alt");
+    // The video is left out under "reduce motion", which falls back to its still photo
+    if (vid && getComputedStyle(vid).display !== "none") {
+      list.push({ video: vid.currentSrc || vid.src, alt: vid.getAttribute("aria-label"), cap: el.dataset.caption });
+    } else {
+      list.push({ src: el.dataset.full || main.src, alt: main.alt, cap: el.dataset.caption || main.alt });
+    }
+    if (alt) list.push({ src: alt.src, alt: alt.alt, cap: alt.dataset.caption || alt.alt });
+    if (el.dataset.second) list.push({ src: el.dataset.second, alt: el.dataset.secondAlt, cap: el.dataset.secondCaption || el.dataset.secondAlt });
+    return list;
+  }
+  function show(i) {
+    at = (i + views.length) % views.length;
+    var v = views[at];
+    boxVid.hidden = !v.video;
+    boxImg.hidden = !!v.video;
+    if (v.video) {
+      boxVid.src = v.video;
+      boxVid.setAttribute("aria-label", v.alt);
+      var playing = boxVid.play();
+      if (playing) playing.catch(function () {});
+    } else {
+      boxVid.pause();
+      boxImg.src = v.src;
+      boxImg.alt = v.alt;
+    }
+    boxCap.textContent = v.cap;
+    boxCount.textContent = views.length > 1 ? (at + 1) + " / " + views.length : "";
+  }
+  function close() {
+    if (!box.classList.contains("open")) return;
+    box.classList.remove("open");
+    boxVid.pause();
+    if (opener) { opener.focus({ preventScroll: true }); opener = null; }
+  }
+
+  document.querySelectorAll(".thumb").forEach(function (el) {
     el.tabIndex = 0;
     el.setAttribute("role", "button");
-    el.setAttribute("aria-label", "View larger: " + label.alt);
+    el.setAttribute("aria-label", "View larger: " + el.querySelector("img").alt);
+    var count = viewsFor(el).length;
+    if (count > 1) {
+      var dots = document.createElement("span");
+      dots.className = "hint";
+      dots.setAttribute("aria-hidden", "true");
+      for (var d = 0; d < count; d++) dots.appendChild(document.createElement("i"));
+      el.appendChild(dots);
+      if (el.querySelector(".alt")) el.classList.add("has-alt");
+    }
     function open() {
-      var alt = el.querySelector(".alt");
-      var img = canHover && alt && !el.dataset.second && el.matches(":hover") ? alt : el.querySelector("img");
-      // The video is left out under "reduce motion", which falls back to its still photo
-      var vid = el.querySelector("video");
-      var showVid = vid && getComputedStyle(vid).display !== "none";
-      boxVid.hidden = !showVid;
-      boxImg.hidden = !!showVid;
-      if (showVid) { boxVid.src = vid.currentSrc; boxVid.play(); }
-      else { boxImg.src = (img !== alt && el.dataset.full) || img.src; boxImg.alt = img.alt; }
-      // Touch screens can't hover, so the second view goes underneath the first
-      var second = el.dataset.second
-        ? { src: el.dataset.second, alt: el.dataset.secondAlt }
-        : (!canHover && alt);
-      boxImg2.hidden = !second;
-      if (second) { boxImg2.src = second.src; boxImg2.alt = second.alt; }
-      box.classList.toggle("two", !!second);
-      var caption = el.dataset.caption || img.alt;
-      boxCap.textContent = canHover ? caption : caption.replace("Hover shows", "Also shown:");
+      views = viewsFor(el);
+      prevBtn.hidden = nextBtn.hidden = views.length < 2;
+      show(0);
       box.classList.add("open");
       opener = el;
       box.focus();
@@ -67,17 +97,32 @@
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
     });
   });
-  function close() {
-    if (!box.classList.contains("open")) return;
-    box.classList.remove("open");
-    boxVid.pause();
-    if (opener) { opener.focus({ preventScroll: true }); opener = null; }
-  }
-  box.addEventListener("click", close);
+
+  box.querySelector(".lb-close").addEventListener("click", close);
+  prevBtn.addEventListener("click", function () { show(at - 1); });
+  nextBtn.addEventListener("click", function () { show(at + 1); });
+  box.addEventListener("click", function (e) { if (e.target === box) close(); });
   document.addEventListener("keydown", function (e) {
+    if (!box.classList.contains("open")) return;
     if (e.key === "Escape") close();
-    // The viewer has nothing to tab to, so keep focus from moving behind it
-    if (e.key === "Tab" && box.classList.contains("open")) e.preventDefault();
+    if (e.key === "ArrowLeft" && views.length > 1) show(at - 1);
+    if (e.key === "ArrowRight" && views.length > 1) show(at + 1);
+    if (e.key === "Tab") {
+      // Keep focus on the viewer's own buttons
+      e.preventDefault();
+      var btns = [].filter.call(box.querySelectorAll("button"), function (b) { return !b.hidden; });
+      var i = btns.indexOf(document.activeElement);
+      btns[(i + (e.shiftKey ? -1 : 1) + btns.length) % btns.length].focus();
+    }
+  });
+  // Swipe between views on touch screens
+  var touchX = null;
+  box.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener("touchend", function (e) {
+    if (touchX === null || views.length < 2) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) show(at + (dx < 0 ? 1 : -1));
+    touchX = null;
   });
 })();
 

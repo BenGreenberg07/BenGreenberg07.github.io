@@ -65,17 +65,17 @@
       <p class="role">Robotics · Mechanical Engineering · Embedded Systems</p>
       
       <p>
-        I'm a sophomore (Class of 2029) at Swarthmore College studying Engineering (B.S.) and Economics (B.A.).
+        I'm a sophomore (Class of 2029) at Swarthmore College studying Engineering (B.S.) and Economics (B.A.). GPA 3.93/4.00 · Sigma Xi.
       </p>
       <p class="soft">
-        This summer I developed an autonomous indoor blimp in
+        In summer 2026 I developed a motion-capture-guided autonomous indoor blimp in
         Prof. David Saldaña's
         Aerial Swarms Lab at Lehigh University, from the 29&nbsp;g
         frame to the flight controller. During the school year I work on a haptic robot for post-stroke
         rehabilitation research at Swarthmore and lead the Swarthmore Robotics Club's F1TENTH autonomous racing team.
       </p>
       <div class="callout">
-        I'm looking for <strong>Summer 2027 internships</strong> in robotics, mechanical engineering, and embedded systems.
+        I'm looking for <strong>Summer 2027 internships</strong> in robotics, mechanical engineering, and embedded systems, available May through August 2027.
       </div>
       <div class="links">
         <a href="mailto:bgreenb2@swarthmore.edu">
@@ -114,7 +114,7 @@
         <div>
           <h3><a href="https://arxiv.org/abs/2609.27154">HINT-Blimp: Human INTent Inference from Multimodal Cues for Robotic Blimps</a></h3>
           <p class="meta">Subhadeep Koley, <span class="me">Benjamin Greenberg</span>, Yifei Simon Shao, Juan Aceros, Nadia Figueroa, David Saldaña</p>
-          <p class="venue">Under review, 2026 <span class="badge">IROS 2026 workshop spotlight</span></p>
+          <p class="venue">Under review, 2026 <span class="badge">IROS 2026 workshop paper</span></p>
           <p class="entry-links">
             <a href="https://arxiv.org/abs/2609.27154">arXiv</a><a href="https://youtu.be/b_QbHGdgBf4">video</a><a href="https://nocworkshop.github.io/2026-IROS/resources/15/IROS_workshop_poster.pdf">poster</a>
           </p>
@@ -122,7 +122,7 @@
       </div>
 
       <div class="entry pub lead">
-        <div class="thumb" data-second="images/fig_bistability.png" data-second-alt="Phase diagram and coverage curves showing two stable vaccination outcomes" data-caption="One run of the agent-based model (peach: unvaccinated, blue: vaccinated). A temporary push raises vaccination, and coverage stays high after the push ends. Below: the same conditions can settle at two stable outcomes, depending on where the population starts.">
+        <div class="thumb" data-second-caption="The same conditions can settle at two stable outcomes, depending on where the population starts." data-second="images/fig_bistability.png" data-second-alt="Phase diagram and coverage curves showing two stable vaccination outcomes" data-caption="One run of the agent-based model (peach: unvaccinated, blue: vaccinated). A temporary push raises vaccination, and coverage stays high after the push ends.">
           <img src="images/tipping_points.jpg" alt="Network of mostly vaccinated agents from the simulation">
           <video src="videos/tipping_points.mp4" autoplay muted loop playsinline preload="auto" aria-label="Simulation of a social network in which vaccination spreads after a temporary push"></video>
         </div>
@@ -130,7 +130,7 @@
           <h3>Adaptive Social Ties Limit Mean-Field Predictions for Committed Vaccinators and Vaccination Tipping Points</h3>
           <p class="meta"><span class="me">Benjamin Greenberg</span>, Hsuan-Wei Lee</p>
           <p class="venue">Under review, 2026</p>
-          <p class="entry-links"><a href="https://github.com/BenGreenberg07/vaccination-bistability">code</a></p>
+          <p class="entry-links"><a href="https://github.com/BenGreenberg07/vaccination-bistability">code (earlier model)</a></p>
         </div>
       </div>
 
@@ -144,20 +144,20 @@
       <div class="job">
         <div class="side">
           <div class="when">May 2026 – <br>Aug 2026</div>
-          <div class="thumb" data-second="images/lab_team.jpg" data-second-alt="Aerial Swarms Lab team with the blimp" data-caption="The flight hardware hanging beneath the blimp's envelope, and the summer 2026 lab team.">
+          <div class="thumb" data-second="images/lab_team.jpg" data-second-alt="Aerial Swarms Lab team with the blimp" data-second-caption="The summer 2026 lab team." data-caption="The flight hardware hanging beneath the blimp's envelope.">
             <img src="images/blimp_gondola.jpg" alt="Small propeller drone hanging beneath a red balloon, above an open hand" loading="lazy">
-            <img class="alt" src="images/blimp.jpg" alt="Red helium blimp with a 3D-printed gondola" loading="lazy">
-            <span class="hint">hover</span>
+            <img class="alt" data-caption="The blimp at Lehigh." src="images/blimp.jpg" alt="Red helium blimp with a 3D-printed gondola" loading="lazy">
           </div>
         </div>
         <div>
           <h3>Aerial Robotics Researcher</h3>
           <p class="org"><a href="https://swarmslab.com/">Aerial Swarms Lab</a>, Lehigh University</p>
+          <p class="entry-links"><a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a><a href="posters/blimp.pdf">poster</a></p>
           <ul>
-            <li>Engineered an autonomous blimp for rehabilitation applications, working from airframe to flight software (<a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a>, <a href="posters/blimp.pdf">poster</a>).</li>
+            <li>Built a helium blimp that flies autonomously under motion-capture guidance and recovers from hand pushes, a stand-in for physical rehabilitation interaction.</li><!-- pinned: keep on resume sync -->
             <li>Designed and 3D-printed a custom frame integrating an ESP32 and IMU at a <strong>29 g</strong> total system weight, iterating over 10+ builds.</li>
+            <li>Ported Crazyflie firmware to a forward-only, four-motor vehicle, with a second ESP32 relaying motion-capture pose over ESP-NOW.</li><!-- pinned: keep on resume sync -->
             <li>Wrote a pure-pursuit and PD controller in C that returned the blimp toward its commanded point after <strong>all 23</strong> hand pushes of up to <strong>4.1 m</strong>, with <strong>78%</strong> settling within 0.8 m and a 15 s median to remove 80% of the offset.</li><!-- pinned: keep on resume sync -->
-            <li>Second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, a human-drone intent recognition paper presented at an IROS 2026 workshop.</li><!-- pinned: keep on resume sync -->
           </ul>
         </div>
       </div>
@@ -171,10 +171,11 @@
         <div>
           <h3>Haptic Robotics Research Assistant</h3>
           <p class="org"><a href="https://sites.google.com/swarthmore.edu/biomechanics">Professor Towles' Biomechanics Lab</a>, Swarthmore College</p>
+          <p class="entry-links"><a href="https://github.com/BenGreenberg07/geomagic-phantom">code</a></p>
           <ul>
             <li>Configuring a PHANToM Premium haptic device for post-stroke rehabilitation research.</li>
             <li>Designing and 3D-printing a fingertip attachment for single-finger testing instead of whole-hand gripping.</li>
-            <li>Building 7 interactive 3D haptic apps in C++ on the OpenHaptics SDK and increasing the data capture rate <strong>5,000x</strong>.</li>
+            <li>Building 7 interactive 3D haptic apps in C++ on the OpenHaptics SDK and raising data capture from one sample every 5 s to <strong>1 kHz</strong>.</li><!-- pinned: keep on resume sync -->
             <li>Planning a study to measure whether post-stroke patients lose both feeling and movement control in the hand.</li>
           </ul>
         </div>
@@ -190,7 +191,7 @@
           <h3>Computational Network Dynamics Researcher</h3>
           <p class="org">Lehigh University, with Prof. Hsuan-Wei Lee</p>
           <ul>
-            <li>Independently built and ran an agent-based epidemiological model (4,000 agents, 50 replicates).</li>
+            <li>Independently built and ran an agent-based epidemiological model, with simulations of up to 4,000 agents.</li><!-- pinned: keep on resume sync -->
             <li>Showed that small dips in vaccination coverage can trigger sudden, hard-to-reverse collapses in herd immunity.</li>
           </ul>
         </div>
@@ -214,19 +215,16 @@
           <p class="meta"><a href="https://swarmslab.com/">Aerial Swarms Lab</a>, Lehigh University · May – Aug 2026</p>
           <p class="entry-links"><a href="https://github.com/BenGreenberg07/esp-fly-blimp">code</a><a href="https://bengreenberg07.github.io/posters/blimp.pdf">poster</a><a href="https://arxiv.org/abs/2609.27154">paper</a></p>
           <p>Designed and 3D-printed a custom frame integrating an ESP32 microcontroller and IMU at a 29 g total
-            system weight, iterating over 10+ builds. Wrote a pure-pursuit and PD controller in C that returned the
-            blimp toward its commanded point after all 23 hand pushes of up to 4.1 m, with 78% settling within 0.8 m
-            and a 15 s median to remove 80% of the offset. Second author on
-            <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, presented at an IROS 2026 workshop.</p>
+            system weight, iterating over 10+ builds. Wrote a pure-pursuit and PD controller in C that, under motion-capture guidance, returned the blimp toward its commanded point after all 23 hand pushes of up to 4.1 m, with 78% settling within 0.8 m
+            and a 15 s median to remove 80% of the offset. Separately, second author on <a href="https://arxiv.org/abs/2609.27154">HINT-Blimp</a>, presented at an IROS 2026 workshop.</p>
         </div>
       </div>
 
       <!-- 2. Truss -->
       <div class="entry">
-        <div class="thumb" data-full="images/truss.jpg" data-caption="As-built truss: 14 aluminum members and 9 joints, bolted at each connection. Hover shows the computed member forces under the 1,000 lb design load.">
+        <div class="thumb" data-full="images/truss.jpg" data-caption="As-built truss: 14 aluminum members and 9 joints, bolted at each connection.">
           <img src="images/truss_thumb.jpg" alt="Aluminum cantilever truss on a workbench" loading="lazy">
-          <img class="alt contain" src="images/truss_forces.jpg" alt="Member force diagram" loading="lazy">
-          <span class="hint">hover</span>
+          <img class="alt contain" data-caption="Computed member forces under the 1,000 lb design load." src="images/truss_forces.jpg" alt="Member force diagram" loading="lazy">
         </div>
         <div>
           <h3>Cantilever Truss: Design, Build, and Load Test</h3>
@@ -240,10 +238,9 @@
 
       <!-- 4. Macropad -->
       <div class="entry">
-        <div class="thumb" data-caption="The assembled macropad: custom PCB, XIAO RP2040, and 3D-printed case. Hover shows a 3D render of the board layout from KiCad.">
+        <div class="thumb" data-caption="The assembled macropad: custom PCB, XIAO RP2040, and 3D-printed case.">
           <img src="images/macropad.jpg" alt="Custom green macropad PCB with white keycaps in a blue 3D-printed case" loading="lazy">
-          <img class="alt" src="images/macropad_render.jpg" alt="3D render of the macropad circuit board" loading="lazy">
-          <span class="hint">hover</span>
+          <img class="alt" data-caption="3D render of the board layout from KiCad." src="images/macropad_render.jpg" alt="3D render of the macropad circuit board" loading="lazy">
         </div>
         <div>
           <h3>Nine-Key Macropad, Custom PCB</h3>
@@ -266,17 +263,15 @@
           <p class="meta"><a href="https://sites.google.com/swarthmore.edu/biomechanics">Professor Towles' Biomechanics Lab</a>, Swarthmore College · 2025 – present</p>
           <p class="entry-links"><a href="https://github.com/BenGreenberg07/geomagic-phantom">code</a></p>
           <p>The stock PHANToM end effector forces a whole-hand grip. I'm designing and printing a fingertip
-            attachment for single-finger testing, and building 7 interactive 3D haptic apps in C++ on the OpenHaptics
-            SDK, increasing the data capture rate 5,000x.</p>
+            attachment for single-finger testing, and building 7 interactive 3D haptic apps in C++ on the OpenHaptics SDK, raising data capture from one sample every 5 s to 1 kHz.</p>
         </div>
       </div>
 
       <!-- 6. SEPTA display -->
       <div class="entry">
-        <div class="thumb" data-caption="The 16-panel board running live departures for Swarthmore station. Hover shows every state the display can render.">
+        <div class="thumb" data-caption="The 16-panel board running live departures for Swarthmore station.">
           <img src="images/septa_board.jpg" alt="LED departure board showing trains to Center City and Media/Wawa" loading="lazy">
-          <img class="alt" src="images/septa_boards.jpg" alt="Grid of LED departure board states" loading="lazy">
-          <span class="hint">hover</span>
+          <img class="alt" data-caption="Every state the display can render." src="images/septa_boards.jpg" alt="Grid of LED departure board states" loading="lazy">
         </div>
         <div>
           <h3>SEPTA Station Departure Board</h3>
@@ -372,10 +367,13 @@
 </footer>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+  <button type="button" class="lb-close" aria-label="Close">&times;</button>
+  <button type="button" class="lb-prev" aria-label="Previous view">&lsaquo;</button>
   <video muted loop playsinline hidden></video>
   <img alt="">
-  <img alt="" hidden>
-  <p></p>
+  <button type="button" class="lb-next" aria-label="Next view">&rsaquo;</button>
+  <p class="lb-count"></p>
+  <p class="lb-cap"></p>
 </div>
 
 <script src="script.js"></script>
