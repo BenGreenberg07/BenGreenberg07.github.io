@@ -81,6 +81,32 @@
   });
 })();
 
+// Research layout comparison: only shows at ?layouts (remove after choosing)
+(function () {
+  if (!/[?&]layouts\b/.test(location.search)) return;
+  var section = document.getElementById("experience");
+  var bar = document.createElement("div");
+  bar.className = "layout-bar";
+  bar.setAttribute("role", "group");
+  bar.setAttribute("aria-label", "Research layout");
+  bar.innerHTML = "<span>Research layout</span>";
+  var options = [["a", "A: under date"], ["b", "B: right side"], ["c", "C: photo left"]];
+  var buttons = options.map(function (o) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = o[1];
+    b.addEventListener("click", function () { pick(o[0]); });
+    bar.appendChild(b);
+    return b;
+  });
+  function pick(id) {
+    section.dataset.layout = id;
+    buttons.forEach(function (b, i) { b.setAttribute("aria-pressed", String(options[i][0] === id)); });
+  }
+  pick("a");
+  document.body.appendChild(bar);
+})();
+
 // Printing / PDF export: load every image up front (lazy images below the fold would print blank)
 (function () {
   function eager() { document.querySelectorAll('img[loading="lazy"]').forEach(function (i) { i.loading = "eager"; }); }
