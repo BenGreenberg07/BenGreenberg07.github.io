@@ -44,6 +44,7 @@
     }
     if (alt) list.push({ src: alt.src, alt: alt.alt, cap: alt.dataset.caption || alt.alt });
     if (el.dataset.second) list.push({ src: el.dataset.second, alt: el.dataset.secondAlt, cap: el.dataset.secondCaption || el.dataset.secondAlt });
+    if (el.dataset.secondVideo) list.push({ video: el.dataset.secondVideo, alt: el.dataset.secondAlt, cap: el.dataset.secondCaption });
     return list;
   }
   function show(i) {
