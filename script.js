@@ -35,7 +35,7 @@
   var opener = null, views = [], at = 0;
 
   function viewsFor(el) {
-    var list = [], main = el.querySelector("img"), vid = el.querySelector("video"), alt = el.querySelector(".alt");
+    var list = [], main = el.querySelector("img"), vid = el.querySelector("video:not(.hover)"), alt = el.querySelector(".alt");
     // The video is left out under "reduce motion", which falls back to its still photo
     if (vid && getComputedStyle(vid).display !== "none") {
       list.push({ video: vid.currentSrc || vid.src, alt: vid.getAttribute("aria-label"), cap: el.dataset.caption });
@@ -98,6 +98,22 @@
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
     });
   });
+
+  // Hover preview: a short clip fades in over the photo while the pointer is on it (mouse devices only)
+  if (window.matchMedia("(hover: hover)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.addEventListener("load", function () {
+      document.querySelectorAll(".thumb[data-hover-video]").forEach(function (el) {
+        var v = document.createElement("video");
+        v.className = "hover";
+        v.muted = true; v.loop = true; v.playsInline = true; v.preload = "auto";
+        v.setAttribute("aria-hidden", "true");
+        v.src = el.dataset.hoverVideo;
+        el.appendChild(v);
+        el.addEventListener("mouseenter", function () { var p = v.play(); if (p) p.catch(function () {}); });
+        el.addEventListener("mouseleave", function () { v.pause(); v.currentTime = 0; });
+      });
+    });
+  }
 
   box.querySelector(".lb-close").addEventListener("click", close);
   prevBtn.addEventListener("click", function () { show(at - 1); });

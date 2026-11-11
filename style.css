@@ -241,7 +241,7 @@ section { padding-top: 24px; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html { scroll-padding-top: 0; }
   body { font-size: 10pt; line-height: 1.45; background: #fff; }
-  .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, footer { display: none !important; }
+  .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, .thumb video.hover, footer { display: none !important; }
   /* the PDF is a projects portfolio: the resume covers the rest */
   .callout, #publications, #experience, #skills, #leadership, .sec-head .count, .sec-sub { display: none !important; }
   .entry.print-block { display: grid; }
@@ -310,6 +310,8 @@ section { padding-top: 24px; }
 }
 .job .thumb { width: 130px; margin-top: 10px; }
 .thumb video::-webkit-media-controls-start-playback-button { display: none; }
+.thumb video.hover { opacity: 0; transition: opacity .45s ease; pointer-events: none; }
+.thumb:hover video.hover { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .thumb video { display: none; } }
 .lightbox video { max-width: min(1100px, 100%); max-height: 80vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
 .lightbox [hidden] { display: none; }
