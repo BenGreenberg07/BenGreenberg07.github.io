@@ -243,9 +243,9 @@ section { padding-top: 24px; }
   body { font-size: 10pt; line-height: 1.45; background: #fff; }
   .topbar, .lightbox, .links, .thumb .hint, .thumb .alt, .thumb video.hover, footer { display: none !important; }
   /* the PDF is a projects portfolio: the resume covers the rest */
-  .callout, #publications, #experience, #skills, #leadership, .sec-head .count, .sec-sub { display: none !important; }
+  .callout, #publications, #experience, #skills, .sec-head .count, .sec-sub { display: none !important; }
   .entry.print-block { display: grid; }
-  #projects .entry { grid-template-columns: 220px 1fr; gap: 18px; padding: 13px 0; }
+  #projects .entry { grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; }
   #projects .thumb { width: 220px; border-radius: 6px; }
   #projects .thumb.tall { width: 220px; aspect-ratio: 4 / 3; }
   #projects h3 { font-size: 11pt; }
@@ -289,6 +289,8 @@ section { padding-top: 24px; }
   .job .org { font-size: 9.5pt; margin-bottom: 2px; }
   .job ul, .job li { font-size: 9.5pt; }
   .job li { margin: 1px 0; }
+  #leadership { padding-top: 22px; }
+  #leadership .job { padding: 10px 0; }
 
   .skills { grid-template-columns: 112px 1fr; gap: 5px 16px; font-size: 9pt; break-inside: avoid; }
   .skills dt { font-size: 8.5pt; line-height: 1.8; }
