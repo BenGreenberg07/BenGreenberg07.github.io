@@ -377,5 +377,17 @@
 </div>
 
 <script src="script.js"></script>
+  <script>
+    // Privacy-friendly visit counter (GoatCounter: no cookies). Skipped for local previews and the PDF export.
+    (function () {
+      var h = location.hostname;
+      if (h !== "bengreenberg07.github.io" || /[?&]print\b/.test(location.search)) return;
+      var s = document.createElement("script");
+      s.async = true;
+      s.dataset.goatcounter = "https://benbobsfg.goatcounter.com/count";
+      s.src = "https://gc.zgo.at/count.js";
+      document.head.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
