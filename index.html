@@ -378,6 +378,10 @@
 
 <script src="script.js"></script>
   <script>
+    // Temporary: ?fonts shows a font picker for trying typefaces.
+    if (/[?&]fonts\b/.test(location.search)) { var f = document.createElement("script"); f.src = "fonts-test.js"; document.body.appendChild(f); }
+  </script>
+  <script>
     // Privacy-friendly visit counter (GoatCounter: no cookies). Skipped for local previews and the PDF export.
     (function () {
       var h = location.hostname;
